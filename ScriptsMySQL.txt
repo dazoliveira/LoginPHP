@@ -1,0 +1,18 @@
+
+
+CREATE TABLE `users` (
+`id` int(11) NOT NULL,
+`name` varchar(200) NOT NULL,
+`user` varchar(50) NOT NULL,
+`password` varchar(32) NOT NULL,
+`active` tinyint(1) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `users` (`id`, `name`, `user`, `password`, `active`) VALUES
+(1, 'João da Silva', 'joaosilva', md5('123'), 1),
+(3, 'Maria Ribeiro', 'mariarib', md5('abc'), 1),
+(8, 'Renato Augusto', 'renato', md5('qq@ww'), 1),
+(12, 'Rogério Pereira', 'rogerio', md5('abc'), null);
+
+ALTER TABLE `users` ADD PRIMARY KEY (`id`);
+ALTER TABLE `users` ADD UNIQUE KEY `uk_user` (`user`);
+ALTER TABLE `users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
